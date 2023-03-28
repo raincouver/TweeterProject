@@ -1,0 +1,45 @@
+
+
+nav {
+  /* color: #545149; */
+  /* background-color: #f4f1ec; */
+  height: 120px;
+  width: 100vw;
+  font-size: 24px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  position: fixed;
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-right: 1.5em;
+}
+
+#navIcon {
+  padding-left: 1.5em;
+  padding-top: 1.5em;
+  font-size: 38px;
+  font-family: 'Bungee', sans-serif; 
+  flex-grow: 1;
+}
+
+#navRightSideContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#navNewTweet {
+  font-family: 'Source Sans Pro', sans-serif; 
+  align-self: center;
+}
+
+#navAngleDown {
+  font-size: 20px;
+  color: red;
+  align-self: center;
+}
+
+

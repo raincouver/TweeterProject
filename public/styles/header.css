@@ -1,0 +1,14 @@
+header {
+  height: 520px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-color: #85C1E9;
+  background-image: url("/images/arches.png");
+  font-size: 38px;
+  font-family: 'Source Sans Pro', sans-serif; 
+  padding-bottom: 20px;
+  color: white;
+}

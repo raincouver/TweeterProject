@@ -7,8 +7,18 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <!-- Font Awesome Icon Library CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css" />
+
+    <!-- External FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,10 +30,37 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class="navContainer">
+        <span id="navIcon">tweeter</span>
+        <div id="navRightSideContainer">
+          <span id="navNewTweet"><strong>Write </strong>a new tweet</span>
+          <i class="fa-solid fa-angles-down fa-beat-fade" id="navAngleDown"></i>
+        </div>
+      </div>
     </nav>
 
+    <!-- Top User Profile (fixed) -->
+    <header>
+      <div>
+        <img id="userAvatar" src="/images/profile-hex.png">
+      </div>
+      <!-- <br> -->
+      <div>
+        <span><strong>Amy</strong> Mansell</span>
+      </div>
+    </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
-</html>
+    <main class="container red">
+      <div class="container first-purple">
+        <div class="box first-blue">B</div>
+        <div class="box second-blue">C</div>
+      </div>
+      <div class="container second-purple">
+        <div class="box first-green">B</div>
+        <div class="box second-green">C</div>
+      </div>
+    </main>
+    </body>
+    
+    </html>
