@@ -7,99 +7,47 @@
   box-sizing: border-box;
   width: 100%;
 }
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: inherit;
-}
+} */
 
 /*
  * Global layout stuff
  */
 
 body {
-  /* color: #545149; */
-  /* background-color: #f4f1ec; */
+  color: #545149;
+  /* display: flex; */
+  background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif; 
 }
 
+main {
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  padding-left: 5%;
+  width: 90vw;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- .red {
-  height: 80vh;
-  margin: 50px;
-  display: flex;
-  flex-direction: column;
-  border: 15px red;
-}
 
-.first-purple {
-  height: 20vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* This rule makes the children spread apart! */
-  border: solid 3px purple;
 
-  box-sizing: border-box;
-  width: 100%;
-  padding: 5px;
-}
 
-.second-purple {
-  height: 80vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* This rule makes the children spread apart! */
-  border: solid 3px purple;
 
-  box-sizing: border-box;
-  width: 100%;
-  padding: 5px;
-}
 
-.first-blue {
-  border: solid 3px blue;
 
-  box-sizing: border-box;
-  width: 50%;
-}
-.second-blue {
-  border: solid 3px blue;
 
-  box-sizing: border-box;
-  width: 100%;
-}
-.first-green{
-  border: solid 3px green;
 
-  box-sizing: border-box;
-  width: 100%;
-}
-.second-green{
-  border: solid 3px green;
 
-  box-sizing: border-box;
-  width: 100%;
-}
 
-.box {
-  /* flex: 1;
-  height: 150px;
-  font-size: 40px;
-  margin: 0;
-  color: white; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-  /* flex: 1;
-  height: 150px; */
-  /* font-size: 40px; */
-  /* margin: 0; */
-  /* color: white; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+
+
+
+
+

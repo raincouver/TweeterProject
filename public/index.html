@@ -1,57 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- Font Awesome Icon Library CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- External FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icon Library CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <!-- External FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <div class="navContainer">
-        <span id="navIcon">tweeter</span>
-        <div id="navRightSideContainer">
-          <span id="navNewTweet"><strong>Write </strong>a new tweet</span>
-          <i class="fa-solid fa-angles-down fa-beat-fade" id="navAngleDown"></i>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <div class="navContainer">
+      <span id="navIcon">tweeter</span>
+      <div id="navRightSideContainer">
+        <span id="navNewTweet"><strong>Write </strong>a new tweet</span>
+        <i class="fa-solid fa-angles-down fa-beat-fade" id="navAngleDown"></i>
+      </div>
+    </div>
+  </nav>
+  <!-- Top User Profile (fixed) -->
+  <header>
+    <div>
+      <img id="userAvatar" src="/images/profile-hex.png">
+    </div>
+    <!-- <br> -->
+    <div>
+      <span><strong>Amy</strong> Mansell</span>
+    </div>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+
+    <section class="new-tweet">
+      <!-- <h2>Compose Tweet</h2> -->
+      <form>
+        <label for="tweet-text"><strong>What are you humming about?</strong></strong></label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div class="tweetContainer">
+          <div class="tweetSpace1">
+          <button id="styledButton" type="submit">Tweet</button>
+          </div>
+          <div class="tweetSpace2">
+          <output name="counter" class="counter" id="tweetCounter" for="tweet-text">140</output>
         </div>
-      </div>
-    </nav>
+        </div>
+      </form>
+      </section>
 
-    <!-- Top User Profile (fixed) -->
-    <header>
-      <div>
-        <img id="userAvatar" src="/images/profile-hex.png">
-      </div>
-      <!-- <br> -->
-      <div>
-        <span><strong>Amy</strong> Mansell</span>
-      </div>
-    </header>
+  </main>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container red">
+  <!-- Page-specific (main) content here -->
+  <!-- <main class="container red">
       <div class="container first-purple">
         <div class="box first-blue">B</div>
         <div class="box second-blue">C</div>
@@ -60,7 +87,8 @@
         <div class="box first-green">B</div>
         <div class="box second-green">C</div>
       </div>
-    </main>
-    </body>
-    
-    </html>
+    </main> -->
+
+</body>
+
+</html>
