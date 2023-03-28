@@ -25,6 +25,13 @@ form {
   flex-direction: column;
 }
 
+textarea {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
 #tweetCounter {
   font-family: 'Bungee', sans-serif;
 }
