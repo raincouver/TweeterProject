@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -32,6 +33,7 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/tweet-message-box.js"></script>
 </head>
 
 <body>
@@ -60,9 +62,9 @@
   <main class="container">
 
     <section class="new-tweet">
-      <!-- <h2>Compose Tweet</h2> -->
+      <!-- New Tweet -->
       <form>
-        <label for="tweet-text"><strong>What are you humming about?</strong></strong></label>
+        <label for="tweet-text"><strong>What are you humming about?</strong></label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="tweetContainer">
           <div class="tweetSpace1">
@@ -74,6 +76,59 @@
         </div>
       </form>
       </section>
+
+      <div class="space"></div>
+
+      <article>
+        <div class="tweet">
+          <!-- Tweet -->
+          <div class="tweet-outline">
+            <section class="tweetHeader">
+              <div class="tweetSpace1">
+                <!-- user avatar -->                
+                <span class="tweetAvatar">
+                  <i class="fa-regular fa-circle-user"></i>
+                </span>
+                <!-- <img class="tweetAvatar" src="/images/profile-hex.png"> -->
+                <!-- username -->
+                <span class="tweetName">Rhoad Jacobs</span>
+              </div>
+              <div class="tweetSpace2">
+                <!-- usertag -->
+                <!-- <button class="tweetIcon tweetTag" type="submit">@MrsJacobs</button> -->
+                <span class="tweetTag">@MrsJacobs</span>
+              </div>
+            </section>
+            <div class="tweetBox">
+            <!-- Tweet Text -->
+            <div class="tweetMessageBox"></div>
+            <span class="tweet-message"><strong>Hello World!</strong></span>
+            <!-- Tweet Line -->
+            <!-- <textarea disabled name="text" id="tweet-line"></textarea> -->
+            </div>
+            <hr class="tweet-line">
+          
+            <section class="tweetFooter">
+              <div class="tweetSpace1">
+                <!-- 10 days ago -->
+                <span class="tweetTime">10 days ago</span>
+              </div>
+              <div class="tweetSpace2">
+                <!-- like comment icons -->
+                <button class="tweetIcon" type="submit">
+                  <i class="fa-solid fa-flag"></i>
+                </button>
+                <button class="tweetIcon" type="submit">
+                  <i class="fa-sharp fa-solid fa-retweet"></i>
+                </button>
+                <button class="tweetIcon" type="submit">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
 
   </main>
 
