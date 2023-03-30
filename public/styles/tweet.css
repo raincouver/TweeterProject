@@ -9,9 +9,7 @@
   height: 50px;
 }
 
-.tweet {
-  display: flex;
-}
+
 
 .tweet-outline {
   border: solid 5px;
@@ -21,6 +19,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: none;
+  margin-bottom: 10px;
 }
 
 .tweetHeader {
@@ -30,6 +29,7 @@
   width: 94%;
   height: 15%;
   padding-top: 1em;
+  justify-content: space-between;
 }
 
 .tweetFooter {
@@ -39,27 +39,35 @@
   width: 90%;
   height: 15%;
   padding-bottom: 1em;
+  justify-content: space-between;
 }
 
 .tweetBox {
   display: flex;
   flex-direction: column;
   align-self: center;
-  /* justify-content: flex-end; */
+  justify-content: flex-end;
+  padding-top: 10px;
+  /* align-items: flex-end; */
   width: 90%;
   height: 70%;
 }
 
+/* .tweetMessageBox {
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+} */
 
-
-.tweetSpace1 {
+.tweetUserBox {
   flex-grow: 1;
   display: flex;
   justify-content: flex-start;
   margin: 1opx;
 }
 
-.tweetSpace2 {
+.tweetIconBox {
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
@@ -67,8 +75,8 @@
 }
 
 .tweetAvatar {
-  /* width: 3em; */
-  font-size: 2em;
+  width: 2em;
+  /* font-size: 2em; */
   background-color: transparent;
 }
 
@@ -97,12 +105,7 @@
   font-weight: bold;
 }
 
-.tweetMessageBox {
-  display: flex;
-  align-self: center;
-  justify-content: flex-end;
-  flex-grow: 1;
-}
+
 
 .tweet-line {
   width: 96%;
