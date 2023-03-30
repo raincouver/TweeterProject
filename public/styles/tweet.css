@@ -12,14 +12,14 @@
 
 
 .tweet-outline {
-  border: solid 5px;
+  border: solid 2px;
   margin-top: 20 px;
-  height: 300px;
+  height: 9em;
   width: 91vw;
   display: flex;
   flex-direction: column;
   box-shadow: none;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .tweetHeader {
@@ -48,16 +48,13 @@
   align-self: center;
   justify-content: flex-end;
   padding-top: 10px;
-  /* align-items: flex-end; */
   width: 90%;
   height: 70%;
+  word-wrap:break-word;
 }
 
-/* .tweetMessageBox {
-  display: flex;
-  align-self: center;
-  justify-content: flex-end;
-  flex-grow: 1;
+/* .tweet-message {
+  white-space:pre-wrap;
 } */
 
 .tweetUserBox {
@@ -76,7 +73,6 @@
 
 .tweetAvatar {
   width: 2em;
-  /* font-size: 2em; */
   background-color: transparent;
 }
 
@@ -95,9 +91,7 @@
   align-self: center;
 }
 
-/* .tweet-message {
-  padding-left: 1em;
-} */
+
 
 .tweetTime {
   font-size: 16px;
@@ -112,7 +106,7 @@
   align-self: center;
   background-color: #f4f1ec;
   border: none;
-  border-bottom: solid 5px #545149;
+  border-bottom: solid 2px #545149;
   height: 10%;
   flex-grow: 0;
 }

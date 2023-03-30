@@ -30,15 +30,15 @@ $(document).ready(() => {
       <!-- user avatar -->
       <img class="tweetAvatar" src=${tweetData.user.avatars}>
       <!-- username -->
-      <span class="tweetName">${tweetData.user.name}</span>
+      <span class="tweetName">${escape(tweetData.user.name)}</span>
     </div>
     <!-- usertag -->
-    <span class="tweetTag">${tweetData.user.handle}</span>
+    <span class="tweetTag">${escape(tweetData.user.handle)}</span>
   </header>
   
   <div class="tweetBox">
     <!-- Tweet Text -->
-    <span class="tweet-message"><strong>${tweetData.content.text}</strong></span>
+    <span class="tweet-message"><strong>${escape(tweetData.content.text)}</strong></span>
   </div>
   <!-- Tweet Line -->
   <hr class="tweet-line">
@@ -66,6 +66,10 @@ $(document).ready(() => {
   };
 
   const renderTweets = function(tweets) {
+
+    //empty the tweet canvas before fetch
+    $tweetCanvas.empty();
+
     //loop through tweets
     for (const tweet of tweets) {
       //calls createTweetElements for each tweet
@@ -86,11 +90,18 @@ $(document).ready(() => {
 
   });
 
+  //Preventing XSS with Escaping
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
  
   //grab the tweet canvas section in the DOM
   const $tweetCanvas = $('.tweetCanvas');
 
-  //fetch the tweets at the start
+  //fetch the tweets on the initial load
   loadtweets();
 
   //grab the form from the DOM
@@ -131,28 +142,3 @@ $(document).ready(() => {
   
 
 });
-
-const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
