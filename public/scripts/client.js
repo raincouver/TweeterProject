@@ -7,6 +7,7 @@
 
 
 $(document).ready(() => {
+    // $(() => {
 
   const tweetData = {
     "user": {
@@ -21,47 +22,46 @@ $(document).ready(() => {
   };
   
   const createTweetElement = function(tweetData) {
-    // $(() => {
 
     const $tweet = $(`
-  <article class="tweet-outline">
-  <header class="tweetHeader">
-    <div class="tweetUserBox">
-      <!-- user avatar -->
-      <img class="tweetAvatar" src=${tweetData.user.avatars}>
-      <!-- username -->
-      <span class="tweetName">${escape(tweetData.user.name)}</span>
-    </div>
-    <!-- usertag -->
-    <span class="tweetTag">${escape(tweetData.user.handle)}</span>
-  </header>
-  
-  <div class="tweetBox">
-    <!-- Tweet Text -->
-    <span class="tweet-message"><strong>${escape(tweetData.content.text)}</strong></span>
-  </div>
-  <!-- Tweet Line -->
-  <hr class="tweet-line">
-  
-  <footer class="tweetFooter">
-    <!-- 10 days ago -->
-    <span class="tweetTime">${timeago.format(tweetData.created_at)}</span>
-    <div class="tweetIconBox">
-      <!-- like comment icons -->
-      <button class="tweetIcon" type="submit">
-        <i class="fa-solid fa-flag"></i>
-      </button>
-      <button class="tweetIcon" type="submit">
-        <i class="fa-sharp fa-solid fa-retweet"></i>
-      </button>
-      <button class="tweetIcon" type="submit">
-        <i class="fa-sharp fa-solid fa-heart"></i>
-      </button>
-    </div>
-  </footer>
-  </article>
-  `);
-  // date(tweetData.created_at)
+      <article class="tweet-outline">
+      <header class="tweetHeader">
+        <div class="tweetUserBox">
+          <!-- user avatar -->
+          <img class="tweetAvatar" src=${tweetData.user.avatars}>
+          <!-- username -->
+          <span class="tweetName">${escape(tweetData.user.name)}</span>
+        </div>
+        <!-- usertag -->
+        <span class="tweetTag">${escape(tweetData.user.handle)}</span>
+      </header>
+      
+      <div class="tweetBox">
+        <!-- Tweet Text -->
+        <span class="tweet-message"><strong>${escape(tweetData.content.text)}</strong></span>
+      </div>
+      <!-- Tweet Line -->
+      <hr class="tweet-line">
+      
+      <footer class="tweetFooter">
+        <!-- 10 days ago -->
+        <span class="tweetTime">${timeago.format(tweetData.created_at)}</span>
+        <div class="tweetIconBox">
+          <!-- like comment icons -->
+          <button class="tweetIcon" type="submit">
+            <i class="fa-solid fa-flag"></i>
+          </button>
+          <button class="tweetIcon" type="submit">
+            <i class="fa-sharp fa-solid fa-retweet"></i>
+          </button>
+          <button class="tweetIcon" type="submit">
+            <i class="fa-sharp fa-solid fa-heart"></i>
+          </button>
+        </div>
+      </footer>
+      </article>
+    `);
+
     return $tweet;
   };
 
@@ -97,6 +97,38 @@ $(document).ready(() => {
     return div.innerHTML;
   };
 
+  const createWaring = function(type) {
+
+    const $waringOverLimit = $(`
+      <div id="newTweetWarning">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span id="warningMessage">Warning: You have exceeded the maximum text limit. Please limit your entry to 140 characters or less.</span>
+      </div>
+    `);
+
+    const $waringUnderLimit = $(`
+      <div id="newTweetWarning">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span id="warningMessage">Warning: Sorry, but you haven't entered anything. Please enter a valid input.</span>
+      </div>
+    `);
+
+    //empty the tweet canvas before fetch
+    $('#newTweetWarning').empty();
+
+    //warn if over limit
+    if (type === 'over') {
+      $('#newTweetWarning').append($waringOverLimit);
+      $("#newTweetWarning").css({'border':'solid 2px red'});
+    }
+
+    //warn if under limit
+    if (type === 'under') {
+      $('#newTweetWarning').append($waringUnderLimit);
+      $("#newTweetWarning").css({'border':'solid 2px red'});
+    }
+  };
+
  
   //grab the tweet canvas section in the DOM
   const $tweetCanvas = $('.tweetCanvas');
@@ -114,15 +146,19 @@ $(document).ready(() => {
 
     //validate user input before posted: alert if over 140 chars
     if ($('#tweet-text').val().length > 140) {
-      alert("Warning: You have exceeded the maximum text limit. Please limit your entry to 140 characters or less.");
+      createWaring('over');
       return;
     }
 
     //validate user input before posted: alert if empty
     if ($('#tweet-text').val().length === 0) {
-      alert("Sorry, but you haven't entered anything. Please enter a valid input.");
+      createWaring('under');
       return;
     }
+
+    //remove warining if last tweet tweeted successfully
+      $('#newTweetWarning').empty();
+      $("#newTweetWarning").css({'border':'none'});
 
     console.log($('#tweet-text').val());
     const urlencoded = $form.serialize();
