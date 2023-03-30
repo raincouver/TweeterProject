@@ -37,6 +37,7 @@
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   <script type="text/javascript" src="/scripts/tweet-message-box.js"></script>
+  <script type="text/javascript" src="/scripts/form-toggle.js"></script>
 </head>
 
 <body>
@@ -46,7 +47,8 @@
       <span id="navIcon">tweeter</span>
       <div id="navRightSideContainer">
         <span id="navNewTweet"><strong>Write </strong>a new tweet</span>
-        <i class="fa-solid fa-angles-down fa-beat-fade" id="navAngleDown"></i>
+        <button id="formToggle">
+          <i class="fa-solid fa-angles-down fa-beat-fade" id="navAngleDown"></i></button>
       </div>
     </div>
   </nav>
@@ -66,9 +68,6 @@
   
     <section class="new-tweet">
       <div id="newTweetWarning"></div>
-        <!-- <i class="fa-solid fa-circle-exclamation"></i>
-        <span id="warningMessage">Warning: You have exceeded the maximum text limit. Please limit your entry to 140 characters or less.</span> -->
-
       <!-- New Tweet -->
       <form>
         <label for="tweet-text"><strong>What are you humming about?</strong>

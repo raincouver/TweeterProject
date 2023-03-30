@@ -39,7 +39,12 @@ nav {
 #navAngleDown {
   font-size: 20px;
   color: red;
-  align-self: center;
 }
 
-
+#formToggle {
+  border: none;
+  background-color: transparent;
+  width: min-content;
+  height: min-content;
+  align-self: center;
+}

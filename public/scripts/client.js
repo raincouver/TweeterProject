@@ -113,7 +113,7 @@ $(document).ready(() => {
       </div>
     `);
 
-    //empty the tweet canvas before fetch
+    //empty the warning before fetch
     $('#newTweetWarning').empty();
 
     //warn if over limit
@@ -128,6 +128,27 @@ $(document).ready(() => {
       $("#newTweetWarning").css({'border':'solid 2px red'});
     }
   };
+
+  // const tweetBoxAnimation = function () {
+  //   $(".tweetIcon").on("mouseover", function() {
+  //     // Change color mouseover
+  //     $(".tweetIcon").css({ 'color': '#F1C40F' });
+  //   });
+  //   $(".tweetIcon").on("mouseout", function() {
+  //     // Change color back if mouseout
+  //     $(".tweetIcon").css({ 'color': '#4056A1' });
+  //   });
+  
+  //   //box shade effect if mouseover
+  //   $(".tweet-outline").on("mouseover", function() {
+  //     // Change color mouseover
+  //     $(".tweetIcon").css({ 'box-shadow': '10px 10px #AFAFAF' });
+  //   });
+  //   $(".tweet-outline").on("mouseout", function() {
+  //     // Change color back if mouseout
+  //     $(".tweetIcon").css({ 'box-shadow': 'none' });
+  //   });
+  // }
 
  
   //grab the tweet canvas section in the DOM
@@ -173,8 +194,5 @@ $(document).ready(() => {
       //fetch the tweets again
       loadtweets();
     });
-
   });
-  
-
 });
