@@ -43,7 +43,7 @@ $(document).ready(() => {
   
   <footer class="tweetFooter">
     <!-- 10 days ago -->
-    <span class="tweetTime">${tweetData.created_at}days ago</span>
+    <span class="tweetTime">${timeago.format(tweetData.created_at)}</span>
     <div class="tweetIconBox">
       <!-- like comment icons -->
       <button class="tweetIcon" type="submit">
@@ -59,7 +59,7 @@ $(document).ready(() => {
   </footer>
   </article>
   `);
-
+  // date(tweetData.created_at)
     return $tweet;
   };
 
@@ -73,8 +73,25 @@ $(document).ready(() => {
     }
   };
 
+  const $loadtweets = $(function() {
+
+    const $button = $('#styledButton');
+
+    $button.on('click', function() {
+      console.log('Button clicked, performing ajax call...');
+      $.ajax({
+        method: 'GET',
+        url: '/tweets' 
+      }).then((tweets) => {
+        renderTweets(tweets)});
+    });
+  });
+
+ 
   //grab the tweet canvas section in the DOM
   const $tweetCanvas = $('.tweetCanvas');
+
+  // loadtweets();
 
   $.ajax({
     method: 'GET',
