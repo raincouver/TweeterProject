@@ -101,14 +101,14 @@ $(document).ready(() => {
 
     const $waringOverLimit = $(`
       <div id="newTweetWarning">
-        <i class="fa-solid fa-circle-exclamation"></i>
+        <i class="fa-solid fa-circle-exclamation" id="warnIcon"></i>
         <span id="warningMessage">Warning: You have exceeded the maximum text limit. Please limit your entry to 140 characters or less.</span>
       </div>
     `);
 
     const $waringUnderLimit = $(`
       <div id="newTweetWarning">
-        <i class="fa-solid fa-circle-exclamation"></i>
+        <i class="fa-solid fa-circle-exclamation" id="warnIcon"></i>
         <span id="warningMessage">Warning: Sorry, but you haven't entered anything. Please enter a valid input.</span>
       </div>
     `);
@@ -119,13 +119,21 @@ $(document).ready(() => {
     //warn if over limit
     if (type === 'over') {
       $('#newTweetWarning').append($waringOverLimit);
-      $("#newTweetWarning").css({'border':'solid 2px red'});
+      $("#newTweetWarning").css({'border':'solid 2px red'});      
+      //add animation to notify user
+      setInterval(function() {
+        $("#warnIcon").fadeIn(1000).fadeOut(1000);
+      }, 1000);
     }
-
     //warn if under limit
     if (type === 'under') {
       $('#newTweetWarning').append($waringUnderLimit);
       $("#newTweetWarning").css({'border':'solid 2px red'});
+      //add animation to notify user
+      setInterval(function() {
+        $("#warnIcon").fadeIn(1000).fadeOut(1000);
+      }, 1000);
+    
     }
   };
 
@@ -193,6 +201,9 @@ $(document).ready(() => {
       console.log(newTweet);
       //fetch the tweets again
       loadtweets();
+      
+      //empty tweet input area after tweet posted successfully
+      $('#tweet-text').val('');
     });
   });
 });

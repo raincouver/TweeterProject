@@ -23,14 +23,27 @@
   margin-left: 10px;
 }
 
+.newTweetLabel {
+  transform: translateY(-50%);
+  position: absolute;
+}
+
 #tweet-text {
+  position: relative;
   width: 90vw;
   font-family: 'Source Sans Pro', sans-serif; 
-  background-color: #f4f1ec;
+  background-color: transparent;
   border-width: 0px;  
   border-bottom: solid 2px #545149;
   font-weight: bold;
 }
+
+#tweet-text:focus ~ .newTweetLabel,
+#tweet-text:not(:placeholder-shown) ~ .newTweetLabel{
+  z-index: -1;
+}
+
+
 
 .tweetContainer {
   display: flex;
