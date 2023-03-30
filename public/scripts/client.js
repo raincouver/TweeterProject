@@ -7,6 +7,7 @@
 
 
 $(document).ready(() => {
+
   const tweetData = {
     "user": {
       "name": "Newton",
@@ -18,6 +19,7 @@ $(document).ready(() => {
     },
     "created_at": 1461116232227
   };
+  
   const createTweetElement = function(tweetData) {
     // $(() => {
 
@@ -73,33 +75,23 @@ $(document).ready(() => {
     }
   };
 
-  const $loadtweets = $(function() {
+  const loadtweets = (function() {
 
-    const $button = $('#styledButton');
-
-    $button.on('click', function() {
-      console.log('Button clicked, performing ajax call...');
-      $.ajax({
-        method: 'GET',
-        url: '/tweets' 
-      }).then((tweets) => {
-        renderTweets(tweets)});
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+    }).then((tweets) => {
+      renderTweets(tweets);
     });
+
   });
 
  
   //grab the tweet canvas section in the DOM
   const $tweetCanvas = $('.tweetCanvas');
 
-  // loadtweets();
-
-  $.ajax({
-    method: 'GET',
-    url: '/tweets',
-  }).then((tweets) => {
-    renderTweets(tweets);
-  });
-
+  //fetch the tweets at the start
+  loadtweets();
 
   //grab the form from the DOM
   const $form = $('form');
@@ -122,26 +114,23 @@ $(document).ready(() => {
     }
 
     console.log($('#tweet-text').val());
-      const urlencoded = $form.serialize();
-      console.log(urlencoded);
+    const urlencoded = $form.serialize();
+    console.log(urlencoded);
 
-      $.ajax({
-        method: 'POST',
-        url: '/tweets',
-        data: urlencoded
-      }).then((newTweet) => {
-        console.log(newTweet);
-      });
-    // }
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: urlencoded
+    }).then((newTweet) => {
+      console.log(newTweet);
+      //fetch the tweets again
+      loadtweets();
+    });
 
   });
+  
+
 });
-
-
-// const $tweet = createTweetElement(tweetData);
-
-// $tweetCanvas.prepend($tweet);
-
 
 const data = [
     {
@@ -167,16 +156,3 @@ const data = [
       "created_at": 1461113959088
     }
   ]
-
-
-
-
-
-
-
-
-// const $tweet = createTweetElement(tweetData);
-
-// // Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
