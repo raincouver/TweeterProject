@@ -109,17 +109,30 @@ $(document).ready(() => {
     event.preventDefault();
     console.log('the form has submitted');
 
-    const urlencoded = $form.serialize();
-    console.log(urlencoded);
+    //validate user input before posted: alert if over 140 chars
+    if ($('#tweet-text').val().length > 140) {
+      alert("Warning: You have exceeded the maximum text limit. Please limit your entry to 140 characters or less.");
+      return;
+    }
 
+    //validate user input before posted: alert if empty
+    if ($('#tweet-text').val().length === 0) {
+      alert("Sorry, but you haven't entered anything. Please enter a valid input.");
+      return;
+    }
 
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: urlencoded
-    }).then((newTweet) => {
-      console.log(newTweet);
-    });
+    console.log($('#tweet-text').val());
+      const urlencoded = $form.serialize();
+      console.log(urlencoded);
+
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: urlencoded
+      }).then((newTweet) => {
+        console.log(newTweet);
+      });
+    // }
 
   });
 });

@@ -1,3 +1,4 @@
+//change icon color if mouse over
 $(document).ready(function(){
   $(".tweetIcon").on("mouseover", function(){
       // Change color mouseover
@@ -9,6 +10,7 @@ $(document).ready(function(){
 });
 });
 
+//box shade effect if mouseover
 $(document).ready(function(){
   $(".tweet-outline").on("mouseover", function(){
       // Change color mouseover
