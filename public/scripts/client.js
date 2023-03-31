@@ -7,20 +7,7 @@
 
 
 $(document).ready(() => {
-    // $(() => {
 
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
-  
   const createTweetElement = function(tweetData) {
 
     const $tweet = $(`
@@ -91,7 +78,7 @@ $(document).ready(() => {
   });
 
   //Preventing XSS with Escaping
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -119,7 +106,7 @@ $(document).ready(() => {
     //warn if over limit
     if (type === 'over') {
       $('#newTweetWarning').append($waringOverLimit);
-      $("#newTweetWarning").css({'border':'solid 2px red'});      
+      $("#newTweetWarning").css({ 'border': 'solid 2px red' });
       //add animation to notify user
       setInterval(function() {
         $("#warnIcon").fadeIn(1000).fadeOut(1000);
@@ -128,37 +115,15 @@ $(document).ready(() => {
     //warn if under limit
     if (type === 'under') {
       $('#newTweetWarning').append($waringUnderLimit);
-      $("#newTweetWarning").css({'border':'solid 2px red'});
+      $("#newTweetWarning").css({ 'border': 'solid 2px red' });
       //add animation to notify user
       setInterval(function() {
         $("#warnIcon").fadeIn(1000).fadeOut(1000);
       }, 1000);
-    
+
     }
   };
 
-  // const tweetBoxAnimation = function () {
-  //   $(".tweetIcon").on("mouseover", function() {
-  //     // Change color mouseover
-  //     $(".tweetIcon").css({ 'color': '#F1C40F' });
-  //   });
-  //   $(".tweetIcon").on("mouseout", function() {
-  //     // Change color back if mouseout
-  //     $(".tweetIcon").css({ 'color': '#4056A1' });
-  //   });
-  
-  //   //box shade effect if mouseover
-  //   $(".tweet-outline").on("mouseover", function() {
-  //     // Change color mouseover
-  //     $(".tweetIcon").css({ 'box-shadow': '10px 10px #AFAFAF' });
-  //   });
-  //   $(".tweet-outline").on("mouseout", function() {
-  //     // Change color back if mouseout
-  //     $(".tweetIcon").css({ 'box-shadow': 'none' });
-  //   });
-  // }
-
- 
   //grab the tweet canvas section in the DOM
   const $tweetCanvas = $('.tweetCanvas');
 
@@ -186,8 +151,8 @@ $(document).ready(() => {
     }
 
     //remove warining if last tweet tweeted successfully
-      $('#newTweetWarning').empty();
-      $("#newTweetWarning").css({'border':'none'});
+    $('#newTweetWarning').empty();
+    $("#newTweetWarning").css({ 'border': 'none' });
 
     console.log($('#tweet-text').val());
     const urlencoded = $form.serialize();
@@ -201,7 +166,7 @@ $(document).ready(() => {
       console.log(newTweet);
       //fetch the tweets again
       loadtweets();
-      
+
       //empty tweet input area after tweet posted successfully
       $('#tweet-text').val('');
     });

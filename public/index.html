@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
@@ -44,7 +44,7 @@
   <script type="text/javascript" src="/scripts/button-toggle.js"></script>
 </head>
 
-<body>  
+<body>
 
   <button id="buttonTop" title="Go to top">
     <i class="fa-sharp fa-solid fa-rocket fa-beat-fade" id="rocket"></i>
@@ -68,21 +68,18 @@
       <div>
         <img id="userAvatar" src="/images/profile-hex.png">
       </div>
-      <!-- <br> -->
       <div>
         <span><strong>Amy</strong> Mansell</span>
       </div>
     </header>
-  
+
     <!-- Page-specific (main) content here -->
     <main>
-  
+
       <section class="new-tweet">
         <div id="newTweetWarning"></div>
         <!-- New Tweet -->
         <form>
-          <!-- <label for="tweet-text" class="newTweetLabel"><strong>What are you humming about?</strong>
-            </label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="tweetContainer">
             <div class="tweetSpace1">
@@ -96,62 +93,14 @@
           </div>
         </form>
       </section>
-  
+
       <div class="space"></div>
-  
+
       <section class="tweetCanvas"></section>
-  
-      <article class="tweet-outline">
-        <header class="tweetHeader">
-          <div class="tweetUserBox">
-            <!-- user avatar -->
-            <img class="tweetAvatar" src="https://i.imgur.com/73hZDYK.png">
-            <!-- username -->
-            <span class="tweetName">Rhoad Jacobs</span>
-          </div>
-          <!-- usertag -->
-          <span class="tweetTag">@MrsJacobs</span>
-        </header>
-  
-        <div class="tweetBox">
-          <!-- Tweet Text -->
-          <span class="tweet-message"><strong>Hello World!</strong></span>
-        </div>
-        <!-- Tweet Line -->
-        <hr class="tweet-line">
-  
-        <footer class="tweetFooter">
-          <!-- 10 days ago -->
-          <span class="tweetTime">10 days ago</span>
-          <div class="tweetIconBox">
-            <!-- like comment icons -->
-            <button class="tweetIcon">
-              <i class="fa-solid fa-flag"></i>
-            </button>
-            <button class="tweetIcon">
-              <i class="fa-sharp fa-solid fa-retweet"></i>
-            </button>
-            <button class="tweetIcon">
-              <i class="fa-sharp fa-solid fa-heart"></i>
-            </button>
-          </div>
-        </footer>
-      </article>
-  
+
     </main>
   </div>
-  <!-- Page-specific (main) content here -->
-  <!-- <main class="container red">
-        <div class="container first-purple">
-          <div class="box first-blue">B</div>
-          <div class="box second-blue">C</div>
-        </div>
-        <div class="container second-purple">
-          <div class="box first-green">B</div>
-          <div class="box second-green">C</div>
-        </div>
-      </main> -->
-  
-  </body>
+
+</body>
 
 </html>

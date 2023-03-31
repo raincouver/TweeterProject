@@ -52,6 +52,14 @@ main {
         font-weight: bold;
       }
 
+      textarea::placeholder {
+        color: #545149;
+      }
+
+      textarea:focus::placeholder {
+        color: transparent;
+      }
+
       .tweetContainer {
         width: 100%;
         display: flex;
@@ -81,18 +89,6 @@ main {
             font-family: 'Bungee', sans-serif;
           }
 
-
-
-
-/* .newTweetLabel {
-  transform: translateY(-50%);
-  position: absolute;
-} */
-
-/* textarea:focus ~ .newTweetLabel,
-textarea:not(:placeholder-shown) ~ .newTweetLabel{
-  z-index: -1;
-} */
 
 
 
