@@ -3,64 +3,36 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
- html {
+html {
   box-sizing: border-box;
-  width: 100%;
+  font-size: 24px;
 }
-/* *, *:before, *:after {
-  box-sizing: inherit;
-} */
-
-/*
- * Global layout stuff
- */
 
 body {
   color: #545149;
   /* display: flex; */
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif; 
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-main {
-  display: flex;
-  /* justify-content: center;
-  align-items: center;
-  flex-direction: column; */
-  padding-left: 5%;
-  width: 90vw;
-}
+  #buttonTop {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    width: 50px;
+    height: 50px;
+  }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-
-#buttonTop {
-
-  position: fixed; 
-  bottom: 20px; 
-  right: 30px;
-  outline: none; 
-  cursor: pointer; 
-  background-color: transparent;
-  border: none;
-  resize: none;
-  width: 50px;
-  height: 50px;
-
-}
-
-#rocket {
-  font-size: 70px;  
-  color: #F4D03F; 
-}
-
-
-
-
-
+  #rocket {
+    font-size: 70px;
+    color: #F4D03F;
+  }
 
 
 

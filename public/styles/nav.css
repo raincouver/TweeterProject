@@ -1,9 +1,6 @@
 
-
 nav {
-  /* color: #545149; */
-  /* background-color: #f4f1ec; */
-  height: 120px;
+  height: 3rem;
   width: 100vw;
   font-size: 24px;
   background-color: #4056A1;
@@ -15,36 +12,36 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  padding-right: 1.5em;
+  padding-right: 0.5em;
 }
 
-#navIcon {
-  padding-left: 1.5em;
-  padding-top: 1.5em;
-  font-size: 38px;
-  font-family: 'Bungee', sans-serif; 
-  flex-grow: 1;
-}
+  #navIcon {
+    padding-left: 1.5em;
+    padding-top: 1.5em;
+    font-size: 1rem;
+    font-family: 'Bungee', sans-serif; 
+    flex-grow: 1;
+  }
 
-#navRightSideContainer {
-  display: flex;
-  flex-direction: column;
-}
+  #navRightSideContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-#navNewTweet {
-  font-family: 'Source Sans Pro', sans-serif; 
-  align-self: center;
-}
+    #navNewTweet {
+      font-family: 'Source Sans Pro', sans-serif; 
+    }
 
-#navAngleDown {
-  font-size: 20px;
-  color: red;
-}
+    #formToggle {
+      border: none;
+      background-color: transparent;
+      width: min-content;
+      height: min-content;
+    }
 
-#formToggle {
-  border: none;
-  background-color: transparent;
-  width: min-content;
-  height: min-content;
-  align-self: center;
-}
+    #navAngleDown {
+      font-size: 1rem;
+      color: red;
+    }
