@@ -154,6 +154,8 @@ $(document).ready(() => {
     $('#newTweetWarning').empty();
     $("#newTweetWarning").css({ 'border': 'none' });
 
+
+    
     console.log($('#tweet-text').val());
     const urlencoded = $form.serialize();
     console.log(urlencoded);
@@ -168,7 +170,8 @@ $(document).ready(() => {
       loadtweets();
 
       //empty tweet input area after tweet posted successfully
-      $('#tweet-text').val('');
+      $('#tweet-text').val('');    
+      $("#tweetCounter").text(140 - $('#tweet-text').val().length);
     });
   });
 });
